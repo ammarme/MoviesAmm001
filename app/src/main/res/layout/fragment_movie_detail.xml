@@ -1,0 +1,117 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/movie_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipChildren="false">
+
+            <ImageView
+                android:id="@+id/movie_poster"
+                android:layout_width="@dimen/movie_details_poster_width"
+                android:layout_height="222.2dp"
+                android:layout_gravity="center_vertical|start"
+                android:layout_marginLeft="@dimen/movie_details_poster_left_margin"
+                android:layout_marginStart="@dimen/movie_details_poster_left_margin"
+                android:layout_marginTop="@dimen/movie_details_poster_top_margin"
+                android:contentDescription="@null"
+                android:scaleType="fitXY"
+                android:src="@mipmap/ic_launcher"/>
+
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/movie_poster"
+                android:layout_toRightOf="@id/movie_poster"
+                android:orientation="vertical"
+                >
+
+                <TextView
+                    android:id="@+id/movie_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    tools:text="Jurassic Park"/>
+
+
+                <TextView
+                    android:id="@+id/movie_release_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/body_text_2"
+                    tools:text="February 2013"/>
+
+                <TextView
+                    android:id="@+id/movie_average_rating"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/body_text_2"
+                    tools:text="Rating: 8/10"/>
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/movie_favorite_button"
+                style="@style/FavoriteButton"
+                android:layout_alignBottom="@+id/movie_poster"
+                android:layout_alignEnd="@+id/linearLayout"
+                android:layout_alignRight="@+id/linearLayout"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:contentDescription="@null"
+                android:tint="@color/colorPrimary"/>
+
+            <ImageButton
+                android:id="@+id/share_button"
+                style="@style/Widget.AppCompat.Light.ActionButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/linearLayout"
+                android:layout_alignStart="@+id/linearLayout"
+                android:layout_alignTop="@+id/movie_favorite_button"
+                android:contentDescription="@null"
+                app:srcCompat="@drawable/ic_share_black_24dp"/>
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/movie_overview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="OverView"/>
+
+        <include
+            android:id="@+id/movie_videos_container"
+            layout="@layout/partial_movie_videos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <ListView
+            android:id="@+id/trails_list_view"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"/>
+
+        <include
+            android:id="@+id/movie_reviews_container"
+            layout="@layout/partial_movie_reviews"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <ListView
+            android:id="@+id/review_list_view"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"/>
+    </LinearLayout>
+</ScrollView>

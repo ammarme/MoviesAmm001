@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">MoviesAmm001</string>
+
+    <string name="title_movie_list">Movies</string>
+    <string name="title_movie_detail">Movie Detail</string>
+    <string name="movie_image_content_description">poster image</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <string-array name="sort_options">
+        <item>most popular</item>
+        <item>highest rated</item>
+        <item>favorites</item>
+    </string-array>
+
+    <string name="movie_details_rating">Average rating: %1$f</string>
+</resources>
